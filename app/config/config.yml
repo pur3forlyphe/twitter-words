@@ -66,3 +66,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+endroid_twitter:
+    consumer_key: "2nOCVWiQpBr7WyhZ66P7dTd2L"
+    consumer_secret: "xYeKqwLCuumnxCQp678anEn4ORd7sRyZqoDxRZANVAIHDseEgF"
+    access_token: "64523000-ncuVRYtyPTDzzPVjXHMW5QqSYLIuWT6xd8V2MXkVI"
+    access_token_secret: "aoQDZtc8til4SlUIC0E9Pdz68lqziRN5uu5qGsUBq0RJ7"
