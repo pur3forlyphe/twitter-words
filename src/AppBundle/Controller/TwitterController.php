@@ -18,11 +18,10 @@ class TwitterController extends Controller
 
     //define empty tweets array
     $tweets = array();
-
+    //define empty urlPararms string
     $urlParams = '';
 
     if(isset($_GET) && !empty($_GET)) {
-
       // Retrieve tweets
       $twitterFeed = $twitter->query('search/tweets', 'GET', 'json', $_GET);
       $decodedTweets = json_decode($twitterFeed->getContent());
