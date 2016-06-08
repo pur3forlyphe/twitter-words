@@ -20,13 +20,13 @@
     {% endfor %}
   </ul>
 
-{% set currentPath = path(app.request.attributes.get('_route'), app.request.query.all|merge(app.request.attributes.get('_route_params'))) %}
+{% set currentPath = path(app.request.attributes.get('_route')) %}
 
 {% set firstTweet = tweets|first %}
-<a href="{{ currentPath }}&since_id={{ firstTweet.id }}">back</a>
+<a href="{{ currentPath }}?{{ url }}&since_id={{ firstTweet.id }}">back</a>
 
 {% set lastTweet = tweets|last %}
-<a href="{{ currentPath }}&max_id={{ lastTweet.id }}">next</a>
+<a href="{{ currentPath }}?{{ url }}&max_id={{ lastTweet.id }}">next</a>
 
 {% endif %}
 
