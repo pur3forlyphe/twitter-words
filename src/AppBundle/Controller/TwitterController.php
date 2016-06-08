@@ -28,11 +28,11 @@ class TwitterController extends Controller
       $decodedTweets = json_decode($twitterFeed->getContent());
       $tweets = $decodedTweets->statuses;
 
+      //build url params for next and back buttons
       if(count($_GET) == 3) {
         $arrayKeys = array_keys($_GET);
         unset($_GET[$arrayKeys[2]]);
       }
-
       $urlParams = http_build_query($_GET);
     }
 
