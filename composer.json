@@ -28,8 +28,29 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
-        "endroid/twitter-bundle": "^1.1"
+        "endroid/twitter-bundle": "^1.1",
+        "symfony/assetic-bundle": "2.1.*",
+        "leafo/lessphp": "*",
+        "twitter/bootstrap": "*"
     },
+    "repositories": [
+        {
+           "type": "package",
+           "package": {
+               "version": "2.2.1",
+               "name": "twitter/bootstrap",
+               "source": {
+                   "url": "https://github.com/twitter/bootstrap.git",
+                   "type": "git",
+                   "reference": "master"
+               },
+               "dist": {
+                   "url": "https://github.com/twitter/bootstrap/zipball/master",
+                   "type": "zip"
+               }
+           }
+        }
+    ],
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
