@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('main.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<form type="GET" action="/twitter/testing">
+  <div class="search-form">
+    <label for="q">Search Criteria</label>
+    <input type="text" name="q" />
+
+    <label for="count">Result Count</label>
+    <input type="number" name="count" min="1" max="100" />
+
+    <input type="submit" value="Submit">
+  </div>
+  {% if tweets is not empty %}
+    <ol>
+      {% for tweet in tweets %}
+      <li>
+        <ul>
+          <li><strong>Tweet text:</strong> {{ tweet.text }}</li>
+          <li><strong>Created:</strong> {{ tweet.created_at }}</li>
+          <li><strong>Id:</strong> {{ tweet.id }}</li>
+        </ul>
+      </li>
+      {% endfor %}
+    </ol>
+
+  {% set currentPath = path(app.request.attributes.get('_route')) %}
+
+  <div class="navigation">
+    {% set firstTweet = tweets|first %}
+    <a class="button" href="{{ currentPath }}?{{ url }}&since_id={{ firstTweet.id }}">back</a>
+
+    {% set lastTweet = tweets|last %}
+    <a class="button" href="{{ currentPath }}?{{ url }}&max_id={{ lastTweet.id }}">next</a>
+  </div>
+
+  {% endif %}
+
+</form>
+{% endblock %}
